@@ -1,0 +1,16 @@
+@mixin button-style{
+    width: 15.4vw;
+    height: 4.9vw;
+    cursor: pointer;
+    background-color: $dark-grey-color;
+    color: $primary-color;
+    border: none;
+    font-size: 0.9vw;
+    font-weight: 400;
+    line-height: 0.83vw;
+    letter-spacing: 0.05vw;
+
+    &:hover{
+        background-color: $secondary-color;
+    }
+}

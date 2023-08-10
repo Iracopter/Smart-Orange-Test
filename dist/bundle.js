@@ -1,0 +1,1 @@
+(()=>{var e=document.getElementById("checkbox"),t=document.getElementById("submitButton"),c=document.getElementById("myForm");e.addEventListener("click",(function(){e.classList.toggle("checked")})),t.addEventListener("click",(function(t){e.classList.contains("checked")?c.submit():(t.preventDefault(),alert("Please confirm your agreement with the privacy policy"))}))})();

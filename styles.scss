@@ -1,0 +1,481 @@
+//colors
+$dark-grey-color: rgba(51, 51, 51, 1);
+$light-grey-color:rgba(189, 189, 189, 1);
+$lighter-grey-color: rgba(243, 243, 243, 1);
+$extra-light-grey-color:rgba(251, 251, 251, 1);
+$primary-color: white;
+$secondary-color: black;
+////////
+//indents
+$left-right-padding: 9.375vw; //(135px)
+$top-bottom-padding: 8.33vw;
+$margin-gap: 2.08vw; //(30px)
+
+////
+
+@import './mixins/button';
+@import './mixins/headers';
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url('./fonts/TTHoves-Light.woff2') format('woff2'),
+         url('./fonts/TTHoves-Light.woff') format('woff');
+}
+  
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'TT Hoves', sans-serif;
+
+    button{
+        @include button-style;
+    }
+    h2{
+        @include headers;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}  
+
+.block1, .block2, .block3, .block5, header{
+    display: flex;
+    background-color: $primary-color;
+}
+
+header{
+    gap: 4.2vw;
+    padding: 2vw $left-right-padding;    
+    align-items: center;
+
+    .logos{
+        display: block;
+        margin-right: 18.85vw;
+        width: 4.76vw;
+
+        img{
+            display: block;
+        }
+    }
+
+    a{
+        font-size: 0.83vw;
+        font-weight: 400;
+        line-height: 0.83vw;
+        letter-spacing: 0.2em;
+        text-align: left;
+        text-decoration: none;
+        color: $dark-grey-color;
+
+        &:hover{
+            cursor: pointer;
+            color: $secondary-color;
+        }
+    }
+
+    .bordered{
+        padding: 0.27vw;
+        border-top: 0.1vw solid $dark-grey-color;
+        border-bottom: 0.1vw solid $dark-grey-color;
+    }
+
+    button{
+        background-color: $primary-color;
+        color: $dark-grey-color;
+    }
+}
+
+.block1{
+    gap: 8.5vw;
+    padding: 0vw $left-right-padding;
+
+    h1{
+        margin-top: 23.375vw;
+        margin-bottom: 6.25vw;
+        font-size: 4.44vw;
+        font-weight: 300;
+        line-height: 4.44vw;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $light-grey-color;
+
+        .dark{
+            color: $dark-grey-color;
+            font-weight: 700;
+        }
+    }
+
+    .button-container{
+        display: flex;
+        align-items: center;
+        gap: 1.6vw;
+        button{
+            width: 3.68vw;
+            height: 3.68vw;
+            background-color: rgba(242, 242, 242, 1);
+            color: $dark-grey-color;
+            &:hover{
+                @include button-style;
+                width: 3.68vw;
+                height: 3.68vw;
+            }
+        }
+    }
+
+    h3{
+        margin-top: 6.25vw;                          ///////////////////////
+        width: 9.9vw;
+        height: 2.15vw;
+        font-size: 1.7vw;
+        font-weight: 400;
+        line-height: 1.7vw;
+        letter-spacing: 0em;
+        text-align: left;
+        color: rgba(224, 224, 224, 1);
+        word-spacing: 1.2vw;
+    }
+
+    .image-container{
+        position: relative; 
+        display: inline-block;
+        right: 0%;
+
+        img{
+            width: 53.5vw;
+        }
+        .relative-button{
+            position: absolute; /* Відносна позиція відносно контейнера */
+            bottom: 0.25vw; /* Відстань від нижнього краю */
+            left: 0vw; /* Відстань від правого краю */
+            background-color: rgba(255, 255, 255, 1);
+            color: $dark-grey-color;
+            &:hover{
+                @include button-style;
+            }
+        }
+    }
+}
+
+.block2{
+    padding: $top-bottom-padding $left-right-padding;
+
+    .about_company{
+        display: flex;
+        background-color: $extra-light-grey-color;
+        padding-left: 6.9vw;
+        padding-top: 2.1vw;
+        padding-right: 4.9vw;
+        width: 81.25vw;
+        
+        .pic1{
+            margin: 2.1vw;
+        }
+
+        .pic2{
+            margin-top: 2.1vw;
+            margin-bottom: -2.1vw;
+        }
+
+        img{
+            width: 18.75vw;
+        }
+
+        p{
+            margin: 1.4vw 0;
+            font-size: 1.1vw;
+            font-weight: 300;
+            line-height: 1.74vw;
+            letter-spacing: 0em;
+            text-align: left;
+            width: 27.8vw;
+            color: black;
+        }
+
+        button{
+            background-color: rgba(255, 255, 255, 1);
+            color: $dark-grey-color;
+            &:hover{
+                @include button-style;
+            }
+        }
+    }
+}
+
+.block3{                               ////////////////перевірити в кінці
+    padding: 0vw $left-right-padding;
+    padding-top: $margin-gap;
+    display: block;
+
+    .task-block{
+        display: flex;
+        margin-top: 1.7vw;
+        gap: 11.5vw;
+
+        .task{
+            display: flex;
+            gap:$margin-gap;
+            height: 10vw;
+
+            h2{
+                font-family: SF Pro Display;
+                font-size: 13.89vw;
+                font-weight: 900;
+                line-height: 10vw;
+                letter-spacing: 0em;
+                text-align: left;
+                color: rgba(242, 242, 242, 1);                      ////////////////////////
+            }
+
+            p{
+                font-size: 1.5vw;
+                font-weight: 400;
+                line-height: 2.5vw;
+                letter-spacing: 0vw;
+                text-align: left;
+                color: $dark-grey-color;
+                min-width: 19.4vw;
+            }
+        }
+    }
+}
+
+.block4{
+    padding: 0;
+    margin: 0;
+    padding: $top-bottom-padding $left-right-padding;
+    display: block;
+    
+    .pictures-of-projects{
+        display: flex;
+        flex-flow: row wrap;
+        width: 81.25vw;
+        gap: $margin-gap;
+        margin: 4.16vw 0vw $margin-gap 0vw;
+
+        img{
+            height: 17.7vw;
+        }
+    }
+
+    button{
+        margin-left: 66vw;
+    }
+
+    .image-container1{
+        position: relative;
+
+        h3{
+            position: absolute;
+            left: 3.47vw;
+            top: 3.47vw;
+            font-size: 4.44vw;
+            font-weight: 700;
+            line-height: 4.44vw;
+            letter-spacing: 0em;
+            text-align: left;
+            color: $extra-light-grey-color;
+            .smaller{
+                font-family: Gothic A1;
+                font-size: 0.8vw;
+                font-weight: 400;
+                line-height: 0.8vw;
+                letter-spacing: 0.2em;
+                text-align: left;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.block5{
+    padding: 0vw $left-right-padding;
+    display: block;
+    padding-bottom: $top-bottom-padding;
+
+    .form-block{
+        display: flex;
+        gap: $margin-gap;
+        margin-top: 0.83vw;
+
+        input{
+            width: 27.15vw;
+            height: 1.18vw;
+            padding: 1.04vw 0vw 0.97vw 1.46vw;
+            background-color: $lighter-grey-color;         ///////////////////////////////color
+            border: none;
+            margin-top: 0.69vw;
+
+            &::placeholder {
+                color: rgba(141, 141, 141, 1); 
+                font-family: TT Hoves;
+                font-size: 0.97vw;
+                font-weight: 400;
+                line-height: 1.18vw;
+                letter-spacing: 0.01vw;
+                text-align: left;
+            }
+        }
+
+        .description-input{
+            width: 27.15vw;
+            height: 8.19vw;
+            margin-top: 0.69vw;
+            padding: 1.04vw 0vw 0vw 1.46vw;
+            background-color: $lighter-grey-color;         /////////////////////color
+            border: none;
+
+            &::placeholder {
+                color: rgba(141, 141, 141, 1); 
+                font-family: TT Hoves;
+                font-size: 0.97vw;
+                font-weight: 400;
+                line-height: 1.18vw;
+                letter-spacing: 0.01vw;
+                text-align: left;
+            }
+        }
+
+        img{
+            height: 25.625vw;
+        }
+        
+    }
+    .submition{
+        display: flex;
+        width: 22vw;
+        text-align: left;
+        gap: 1vw;
+        margin: 1.5vw 0;
+
+        p{
+            color: $dark-grey-color;
+            font-size: 0.97vw;
+            line-height: 1.18vw;
+            letter-spacing: 0.01vw;
+            text-align: left;
+        }
+    }
+}
+
+footer{
+    background-color: $dark-grey-color;
+    color: $extra-light-grey-color;
+    text-align: center;
+
+    .container{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10vw;
+        padding-top: 4vw;
+        justify-content: center;
+        text-align: left;
+
+        h3:hover{
+            cursor: pointer;
+        }
+
+        .contact-headings{
+            margin-bottom: 1.7vw;
+            font-weight: 700;
+            &:hover{
+                cursor:auto;
+            }
+        }
+
+        .Social-media{
+            display: block;
+
+            .links{
+                display: flex;
+                gap: 2vw;
+                text-align:start;
+                a{
+                    img{
+                        width: 100%;
+                        height: 2.2vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-block{
+        display: flex;
+        margin-bottom: 2.2vw;
+        gap: 1vw;
+        .adress{
+            width: 0.76vw;
+            height: 1.1vw;
+        }
+        .mail{
+            width: 1.1vw;
+            height: 0.76vw;
+        }
+        .phone{
+            width: 1.1vw;
+            height: 1.1vw;
+        }
+        p{
+            width: 17vw;
+            font-size: 0.97vw;
+            font-weight: 500;
+            line-height: 1.67vw;
+            letter-spacing: 0.03vw;
+            text-align: left;
+        }  
+    }
+
+    h3{
+        margin-bottom: 1.1vw;
+        font-size: 0.97vw;
+        font-weight: 500;
+        line-height: 1.67vw;
+        letter-spacing: 0.03vw;
+        text-align: left;
+    }
+
+    h5{
+        padding: 1.6vw 0vw;
+        color: rgba(200, 200, 200, 0.5);
+    }
+
+    a{
+        width: 2vw;
+    }
+
+    .line {
+        width: 100%; 
+        height: 0.07vw; 
+        background-color: rgba(255, 255, 255, 0.1); 
+        margin-top: 4.16vw; 
+    }
+      
+}
+
+.checkbox {
+    width: 1.7vw;
+    height: 1.7vw;
+    background-color: $primary-color;
+    border: 0.14vw solid $dark-grey-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .check-icon {
+    width: 1.39vw;
+    height: 1.39vw;
+    fill: transparent;
+    stroke: $secondary-color;
+    stroke-width: 2;
+    opacity: 0;
+  }
+  
+  .checkbox.checked .check-icon {
+    opacity: 1;
+  }
+  
